@@ -27,6 +27,17 @@ dependencies {
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("org.springframework:spring-webflux:6.0.11")
+}
+
+allOpen{
+	annotation("jakarta.persistence.Entity")
+	annotation("jakarta.persistence.MappedSuperclass")
+	annotation("jakarta.persistence.Embeddable")
+}
+
+noArg{
+	annotation("jakarta.persistence.Entity")
 }
 
 tasks.withType<KotlinCompile> {
